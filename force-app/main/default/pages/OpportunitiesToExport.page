@@ -1,0 +1,37 @@
+<apex:page controller="OpportunitiesVf" action="{!exportToExcel}" >
+	
+
+	<body>
+		<br/>
+		<center>
+			<h1>Oportunidades del mes</h1>
+		</center>
+		<br/>
+	 	<apex:form><apex:commandButton action="{!exportToExcelPageRef}" value="Export excel" /></apex:form>
+		<br/>
+	    <apex:pageBlock >
+	        <apex:pageBlockTable value="{!currentOpportunities}" var="x">
+	             <apex:column headerValue="Nombre">
+	                <a href="/apex/OpportunitiesDetail?recordId={!x.Id}" target="_blank">{!x.Name}</a>
+	            </apex:column>
+	             <apex:column headerValue="Nombre de cuenta">
+	                {!x.Account.Name}
+	            </apex:column>
+	             <apex:column headerValue="Monto">
+	                {!x.Amount}
+	            </apex:column>
+	             <apex:column headerValue="Fecha de cierre">
+	                {!x.CloseDate}
+	            </apex:column>
+	            <apex:column headerValue="Etapa de la Oportunidad">
+	                {!x.StageName}
+	            </apex:column>
+	             <apex:column headerValue="Tipo">
+	                {!x.Type}
+	            </apex:column>
+	        </apex:pageBlockTable>
+	    </apex:pageBlock>   
+	</body>
+ 
+</apex:page>
+

@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="OpportunitiesVf">
+	<aura:attribute name="recordId" type="String" />
+	<aura:handler name="init" value="{!this}" action="{!c.initialize}"/>
+
+
+	<aura:attribute name="mydata" type="Object"/>
+    <aura:attribute name="mycolumns" type="List"/>
+
+	<lightning:datatable data="{! v.mydata }"
+                        columns="{! v.mycolumns }"
+                        keyField="Id"
+                        hideCheckboxColumn="true"/>
+
+
+</aura:component>	

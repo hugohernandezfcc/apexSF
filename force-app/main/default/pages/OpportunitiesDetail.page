@@ -1,0 +1,46 @@
+<apex:page controller="OpportunitiesVf" cache="false" renderAs="pdf" showHeader="false" sidebar="false"  applyBodyTag="false" applyHtmlTag="false" action="{!showDetailsPdf}" standardStylesheets="false">
+
+	<head>
+		<link rel="stylesheet" href="{!URLFOR($Resource.style_resources)}"></link>
+	</head>
+
+  	<body>
+
+  		<center>
+  			<h1>Opportunity: {!currentOpportunity.Name} </h1>
+  		</center>
+
+  		<table border="1" id="customers">
+  			<tr>
+			    <th>Campo</th>
+			    <th>Valor</th>
+			</tr>
+	  		<tr>
+	  			<td>Nombre de la oportunidad</td>
+	  			<td>{!currentOpportunity.Name}</td>
+	  		</tr>
+	  		<tr>
+	  			<td>Nombre de la Cuenta</td>
+	  			<td>{!currentOpportunity.Account.Name}</td>
+	  		</tr>
+	  		<tr>
+	  			<td>Monto</td>
+	  			<td>{!currentOpportunity.Amount}</td>
+	  		</tr>
+	  		<tr>
+	  			<td>Fecha de cierre</td>
+	  			<td>{!currentOpportunity.CloseDate}</td>
+	  		</tr>
+	  		<tr>
+	  			<td>Etapa de la oportunidad</td>
+	  			<td>{!currentOpportunity.StageName}</td>
+	  		</tr>
+	  		<tr>
+	  			<td>Tipo de la oportunidad</td>
+	  			<td>{!currentOpportunity.Type}</td>
+	  		</tr>
+	  	</table>
+  	</body>
+
+</apex:page>
+

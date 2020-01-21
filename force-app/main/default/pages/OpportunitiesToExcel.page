@@ -1,0 +1,5 @@
+<apex:page controller="OpportunitiesVf" action="{!exportToExcel}" readOnly="true" contentType="application/vnd.ms-excel#OpportunitiThisMonth.xls">{!header}
+  <apex:repeat value="{!currentOpportunities}" var="x">
+       {!x.Id},{!x.Name},{!x.Account.Name},{!x.Amount},{!x.CloseDate},{!x.StageName},{!x.Type}
+  </apex:repeat>
+</apex:page>
